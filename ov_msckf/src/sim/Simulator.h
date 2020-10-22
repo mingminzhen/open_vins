@@ -31,9 +31,10 @@
 #include <Eigen/Eigen>
 #include <Eigen/StdVector>
 
-#include <opencv/cv.hpp>
+// #include <opencv/cv.hpp>
 #include <opencv2/core/core.hpp>
-
+#include <opencv2/imgproc.hpp>
+#include <opencv2/calib3d.hpp>
 
 #include "core/VioManagerOptions.h"
 #include "sim/BsplineSE3.h"

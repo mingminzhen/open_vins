@@ -175,7 +175,7 @@ void VioManager::feed_measurement_monocular(double timestamp, cv::Mat& img0, siz
         did_zupt_update = updaterZUPT->try_update(state, timestamp);
         if(did_zupt_update) {
             cv::Mat img_outtemp0;
-            cv::cvtColor(img0, img_outtemp0, CV_GRAY2RGB);
+            cv::cvtColor(img0, img_outtemp0, cv::COLOR_GRAY2RGB);
             bool is_small = (std::min(img0.cols,img0.rows) < 400);
             auto txtpt = (is_small)? cv::Point(10,30) : cv::Point(30,60);
             cv::putText(img_outtemp0, "zvup active", txtpt, cv::FONT_HERSHEY_COMPLEX_SMALL, (is_small)? 1.0 : 2.0, cv::Scalar(0,0,255),3);
@@ -229,8 +229,8 @@ void VioManager::feed_measurement_stereo(double timestamp, cv::Mat& img0, cv::Ma
         did_zupt_update = updaterZUPT->try_update(state, timestamp);
         if(did_zupt_update) {
             cv::Mat img_outtemp0, img_outtemp1;
-            cv::cvtColor(img0, img_outtemp0, CV_GRAY2RGB);
-            cv::cvtColor(img1, img_outtemp1, CV_GRAY2RGB);
+            cv::cvtColor(img0, img_outtemp0, cv::COLOR_GRAY2RGB);
+            cv::cvtColor(img1, img_outtemp1, cv::COLOR_GRAY2RGB);
             bool is_small = (std::min(img0.cols,img0.rows) < 400);
             auto txtpt = (is_small)? cv::Point(10,30) : cv::Point(30,60);
             cv::putText(img_outtemp0, "zvup active", txtpt, cv::FONT_HERSHEY_COMPLEX_SMALL, (is_small)? 1.0 : 2.0, cv::Scalar(0,0,255),3);

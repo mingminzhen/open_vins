@@ -26,7 +26,7 @@
 #include <sstream>
 #include <unistd.h>
 
-#include <opencv/cv.hpp>
+// #include <opencv/cv.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
@@ -143,7 +143,7 @@ int main(int argc, char** argv)
 
         // Convert to grayscale if not
         if(frame.channels() != 1)
-            cv::cvtColor(frame, frame, CV_BGR2GRAY);
+            cv::cvtColor(frame, frame, cv::COLOR_BGR2GRAY);
 
         // Else lets track this image
         extractor->feed_monocular(current_time, frame, 0);

@@ -23,6 +23,8 @@
 
 
 #include "TrackBase.h"
+#include <opencv2/video/tracking.hpp>
+
 
 
 namespace ov_core {
